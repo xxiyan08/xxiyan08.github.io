@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css">
+  <script src="/lib/pace/pace.min.js"></script>
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="纯文字 2.1 入门级 2.1.1计算机基础与编程环境1.【1】计算机的基本构成（CPU、内存、I&#x2F;O设 备等）2.【1】Windows、 Linux等操作系统的基本概念及其常见操作3.【1】计算机网络和Internet的基本概念4.【1】计算机的历史及其在现代社会中的常见应用5.【1】 NOI以及相关活动的历史6.【1】进制的基本概念与进制转换、字节与字7.【1】程序设计语言以及程序编译和运行的">
+<meta property="og:type" content="article">
+<meta property="og:title" content="NOI大纲">
+<meta property="og:url" content="http://example.com/2021/07/26/NOI%E5%A4%A7%E7%BA%B2/index.html">
+<meta property="og:site_name" content="wlzx的博客">
+<meta property="og:description" content="纯文字 2.1 入门级 2.1.1计算机基础与编程环境1.【1】计算机的基本构成（CPU、内存、I&#x2F;O设 备等）2.【1】Windows、 Linux等操作系统的基本概念及其常见操作3.【1】计算机网络和Internet的基本概念4.【1】计算机的历史及其在现代社会中的常见应用5.【1】 NOI以及相关活动的历史6.【1】进制的基本概念与进制转换、字节与字7.【1】程序设计语言以及程序编译和运行的">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-07-26T23:15:04.000Z">
+<meta property="article:modified_time" content="2021-08-08T10:37:59.387Z">
+<meta property="article:author" content="wlzx">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://example.com/2021/07/26/NOI%E5%A4%A7%E7%BA%B2/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>NOI大纲 | wlzx的博客</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">wlzx的博客</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="archive fa-fw"></i>归档</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-resources">
+
+    <a href="/resources/" rel="section"><i class="download fa-fw"></i>资源</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/07/26/NOI%E5%A4%A7%E7%BA%B2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="wlzx">
+      <meta itemprop="description" content="上次编辑于7.23">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="wlzx的博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          NOI大纲
+        </h1>
+
+        <div class="post-meta">
+          
+            <i class="fa fa-thumb-tack"></i>
+            <font color=7D26CD>置顶</font>
+            <span class="post-meta-divider">|</span>
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-07-27 07:15:04" itemprop="dateCreated datePublished" datetime="2021-07-27T07:15:04+08:00">2021-07-27</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-08-08 18:37:59" itemprop="dateModified" datetime="2021-08-08T18:37:59+08:00">2021-08-08</time>
+              </span>
+
+          
+            <span id="/2021/07/26/NOI%E5%A4%A7%E7%BA%B2/" class="post-meta-item leancloud_visitors" data-flag-title="NOI大纲" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2021/07/26/NOI%E5%A4%A7%E7%BA%B2/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2021/07/26/NOI%E5%A4%A7%E7%BA%B2/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>纯文字</p>
+<p><strong>2.1 入门级</strong></p>
+<p><strong>2.1.1计算机基础与编程环境</strong>1.【1】计算机的基本构成（CPU、内存、I/O设 备等）2.【1】Windows、 Linux等操作系统的基本概念及其常见操作3.【1】计算机网络和Internet的基本概念4.【1】计算机的历史及其在现代社会中的常见应用5.【1】 NOI以及相关活动的历史6.【1】进制的基本概念与进制转换、字节与字7.【1】程序设计语言以及程序编译和运行的基本概念8.【1】使用图形界面新建、复制、删除、移动文件或目录9.【1】使用Windows系统下的集成开发环境（例如 Dev C++等）10.【1】使用Linux系统下的集成开发环境（例如 Code::Blocks等）11.【1】g++、gcc等常见编译器的基本使用【X】表示难度系数</p>
+<p><strong>2.1.2 C++程序设计1 1. 程序基本概念</strong></p>
+<p>•【1】标识符、关键字、常量、变量、字符串、 表达式的概念•【1】常量与变量的命名、定义及作用•【2】头文件与名字空间的定义与理解</p>
+<p>•【2】编辑、编译、解释、调试等概念理解 <strong>2. 基本数据类型</strong></p>
+<p>•【1】整数型：int, long long•【1】实数型：float, double•【1】字符型：char</p>
+<p>•【1】布尔型：bool <strong>3. 程序基本语句</strong></p>
+<p>•【2】cin 语句.scanf 语句，cout语句，printf语句，赋值语句，复合语句•【2】if语句，switch语句，多层条件语句•【2】for语句，while语句，do while语句</p>
+<p>•【3】多层循环语句</p>
+<p><strong>4. 基本运算</strong></p>
+<p>•【1】算数运算：加、减、乘、除、整除、求余•【1】关系运算：大于，大于等于，小于，小于等于，等于，不等于•【1】逻辑运算：与（&amp;&amp;）、或（||）、非（！）•【1】变量自增与自减运算</p>
+<p>•【1】三目运算</p>
+<p>•【3】位运算：与（&amp;）、或（|）、非（~）、 异或（^）、左移、右移 <strong>5. 数学库常用函数</strong></p>
+<p>•【3】绝对值函数，四舍五入函数，取上整函数， 取下整函数，常用三角函数，对数函数，指数 函数，平方根函数</p>
+<p><strong>6. 结构化程序设计</strong></p>
+<p>•【1】顺序结构、分支结构和循环结构•【2】自顶向下、逐步求精的模块化程序设计•【2】流程图的概念及流程图描述</p>
+<p><strong>7. 数组</strong></p>
+<p>•【1】数组定义，数组与数组下标的含义•【1】数组的读入与输出•【2】纯一维数组的综合运用•【3】纯二维数组与多维数组的综合应用</p>
+<p><strong>8. 字符串的处理</strong></p>
+<p>•【2】字符数组与字符串的关系•【2】字符数组的综合应用•【2】string类定义、相关函数引用•【3】string类的综合应用</p>
+<p><strong>9. 函数与递归</strong></p>
+<p>•【2】函数定义与调用，形参与实参•【3】传值参数与传引用参数•【2】常量与变量的作用范围•【2】递归函数的概念、定义与调用</p>
+<p><strong>10. 结构体类型</strong>•【3】结构体的定义及应用</p>
+<p><strong>11. 指针类型</strong>•【4】指针的概念及调用•【4】指针与数组•【4】字符指针与string类•【4】指向结构体的指针</p>
+<p><strong>12. 文件及基本读写</strong>•【2】文件的基本概念，文本文件的基本操作•【2】文本文件类型与二进制文件类型•【2】文件重定向、文件读写等操作</p>
+<p><strong>13. STL模板应用</strong></p>
+<p>•【3】<algorithm> 中 sort 函数•【4】 栈（stack）、 队列（queue）、链表（list）、向量（vector）等容器</p>
+<p>1 C++以外的其他高级程序设计语言可参照本部分内容<strong>。</strong></p>
+<p><strong>2.1.3 数据结构 1. 线性表</strong></p>
+<p>•【3】链表：单链表、双向链表、循环链表•【3】栈•【3】队列</p>
+<p><strong>2. 简单树</strong></p>
+<p>•【3】树的定义及其相关概念•【4】树的父亲表示法•【3】二叉树的定义及其基本性质</p>
+<p>•【4】二叉树的孩子表示法•【4】二叉树的遍历：前序、中序、后序遍历</p>
+<p><strong>3. 特殊树</strong></p>
+<p>•【4】完全二叉树的定义与基本性质•【4】完全二叉树的数组表示法•【4】哈夫曼树的定义、构造及其遍历</p>
+<p>•【4】二叉树的定义、构造及其遍历</p>
+<p><strong>4. 简单图</strong></p>
+<p>•【3】图的定义及其相关概念•【4】图的邻接矩阵存储•【4】图的邻接表存储</p>
+<p><strong>2.1.4 算法 1. 算法概念与描述</strong></p>
+<p>•【1】算法概念•【2】算法描述：自然语言描述、流程图描述、伪代码描述</p>
+<p><strong>2. 入门算法</strong></p>
+<p>•【1】枚举法•【1】模拟法</p>
+<p><strong>3. 基础算法</strong></p>
+<p>•【3】贪心法•【3】递推法•【4】递归法</p>
+<p>•【4】二分法•【4】倍增法</p>
+<p><strong>4. 数值处理算法</strong></p>
+<p>•【4】高精度的加法•【4】高精度的减法•【4】高精度的乘法•【4】求高精度整数除以单精度整数的商和余数</p>
+<p><strong>5. 排序算法</strong></p>
+<p>•【3】排序的基本概念（稳定性等）•【3】冒泡排序•【3】简单选择排序•【3】简单插入排序</p>
+<p><strong>6. 图论算法</strong>•【4】图的深度优先遍历算法•【4】图的宽度优先遍历算法•【5】洪水填充算法（floodfill）</p>
+<p><strong>7. 动态规则</strong>•【4】动态规划的基本思路•【4】简单一维动态规划•【5】简单背包类型动态规划•【5】简单区间类型动态规划</p>
+<p><strong>2.1.5 数学 1. 数及其运算</strong></p>
+<p>•【1】数的概念，算术运算（加、减、乘、除、求余）•【1】数的进制：二进制、八进制、十六进制和十进制及其转换•【2】编码：ASCII码，哈夫曼编码，格雷码</p>
+<p><strong>2. 初中数学</strong></p>
+<p>•【1】初中代数•【1】初中平面几何</p>
+<p><strong>3. 初等数论</strong></p>
+<p>•【3】整除、因数、倍数、指数、质数、合数、同余等概念•【3】唯一分解定理•【3】欧几里得算法（辗转相除法）</p>
+<p>•【4】埃氏筛法和线性筛法求素数</p>
+<p><strong>4. 组合数学</strong></p>
+<p>•【2】加法原理•【2】乘法原理•【4】排列及计算公式•【4】组合及计算公式•【4】杨辉三角公式</p>
+<p><strong>2.2 提高级</strong></p>
+<p><strong>2.2.1 计算机基础与编程环境</strong>1.【5】在Linux系统终端中使用mkdir、cp、rm、mv等命令新建、复制、删除、移动文件或目录2.【5】在Linux系统终端中使用cd、pwd、ls等命令更改、显示目录路径和查看目录中的文件3.【5】在Linux系统下使用Gedit、Vim或Emacs等文本编辑工具编写代码4.【5】熟悉g++、gcc等编译器以及优化、数学库等常见编译选项5.【5】在Linux系统终端中运行程序，并使用time命令查看程序用时（区分real time、sys time和user time）6.【5】了解调式工具gdb及其break、display、continue、step等命令</p>
+<p><strong>2.2.1 C++程序设计2 1. 类（class）</strong></p>
+<p>•【6】类的概念及简单应用•【6】成员函数和运算符重载</p>
+<p><strong>2. STL模板</strong></p>
+<p>•【5】集合（set）•【5】列表（list），双端队列（deque），优先队列（priority_queue）•【5】多重集合（multiset）</p>
+<p>•【5】映射（map），多重映射（multimap）•【5】对（pair），元组（tuple）</p>
+<p>2 C++以外的其他高级程序设计语言可参照本部分内容<strong>。</strong></p>
+<p><strong>2.2.2 数据结构 1. 线性结构</strong></p>
+<p>•【5】双端栈•【5】双端队列•【5】有序队列</p>
+<p>•【6】优先队列•【6】倍增表（ST表）</p>
+<p><strong>2. 集合与森林</strong></p>
+<p>•【6】等价类•【6】并查集•【6】树与二叉树的转化——孩子兄弟表示法</p>
+<p><strong>3. 特殊树</strong></p>
+<p>•【6】线段树与树状数组•【6】字典树（trie树）•【7】笛卡尔树</p>
+<p>•【8】二叉平衡树AVL、treap、splay等•【8】基环树</p>
+<p><strong>4. 常见图</strong></p>
+<p>•【5】稀疏图•【6】偶图（二分图）•【6】欧拉图•【6】有向无环图</p>
+<p>•【7】连通图与强连通图</p>
+<p>•【7】重连通图</p>
+<p><strong>5. 哈希表</strong></p>
+<p>•【5】数值哈希函数构造•【6】排列哈希函数构造•【6】字符串哈希函数构造•【6】哈希函数冲突的常见解决方法</p>
+<p><strong>2.2.3 算法 1. 复杂度分析</strong></p>
+<p>•【6】空间复杂度分析•【6】时间复杂度分析</p>
+<p><strong>2. 基础算法</strong></p>
+<p>•【6】分治算法</p>
+<p><strong>3. 排序算法</strong></p>
+<p>•【5】归并排序•【5】快速排序•【6】堆排序</p>
+<p>•【6】树形选择排序（锦标赛排序）•【5】桶排序•【6】基数排序</p>
+<p><strong>4. 字符串相关算法</strong></p>
+<p>•【5】字符串匹配算法——KMP</p>
+<p><strong>5. 搜索算法</strong></p>
+<p>•【6】搜索的剪枝优化•【6】记忆化搜索•【7】启发式搜索•【7】双向宽度优先搜索•【7】迭代加深搜索•【8】搜索对象的压缩存储</p>
+<p><strong>6. 图论算法</strong></p>
+<p>•【6】Prim和kruskal等求最小生成树算法•【7】求次小生成树算法•【6】Dijkstra、bellman_ford、SPFA等求单源最短路算法•【7】求单源次短路径算法•【6】Floyd-Warshall算法求任意两点间的最短路和传递闭包•【6】有向无环图的拓扑排序算法•【6】求欧拉道路和欧拉回路算法•【6】二分图的构造及其判定算法•【6】最近公共祖先•【7】求强联通分量算法•【7】强连通分量的缩点算法•【7】求割点、割边算法</p>
+<p><strong>7. 动态规则</strong></p>
+<p>•【6】树型动态规划•【7】状态压缩动态规划•【8】动态规划的常用优化</p>
+<p><strong>2.2.4 数学 1. 高中数学</strong></p>
+<p>•【5】代数•【6】解析几何•【6】立体几何</p>
+<p><strong>2. 初等数论</strong></p>
+<p>•【5】同余式•【7】欧拉定理和欧拉函数•【7】费马小定理•【7】威尔逊定理•【7】裴蜀定理•【7】逆元•【7】扩展欧几里得算法•【7】孙子定理（即中国剩余定理）</p>
+<p><strong>3. 组合数学</strong></p>
+<p>•【6】可重集排列•【6】可重集组合•【6】错排列、圆排列</p>
+<p>•【6】鸽巢原理•【6】二项式定理•【7】容斥原理</p>
+<p>•【7】卡特兰数</p>
+<p><strong>4. 线性代数</strong></p>
+<p>•【5】矩阵概念•【6】特殊矩阵：稀疏矩阵，三角矩阵，对称矩阵•【6】矩阵的初等变换•【6】矩阵的加减乘和转置运算•【7】线性方程组的高斯消元法</p>
+<p><strong>2.3 NOI级</strong></p>
+<p><strong>2.3.1 C++程序设计3</strong>1.【8】STL模板：容器（containers）、迭代器（iterators）、空间配置器（allocators）、配接器（adapters）、算法（algorithms）、仿函数（functors）2.【8】面向对象的程序设计思想（OOP）</p>
+<p>3 C++以外的其他高级程序设计语言可参照本部分内容<strong>。</strong></p>
+<p><strong>2.3.2 数据结构 1. 线性结构</strong></p>
+<p>•【8】分块•【8】块状链表</p>
+<p><strong>2. 序列</strong></p>
+<p>•【8】后缀数组•【9】跳跃表•【9】无根树的Prüfer序列</p>
+<p><strong>3. 复杂树</strong></p>
+<p>•【8】树链剖分•【8】主席树•【8】二位线段树•【9】后缀树•【9】树套树•【9】k-d 树•【10】最小树形图•【10】动态树（LCT）</p>
+<p><strong>4. 可合并堆</strong></p>
+<p>•【8】左偏树•【10】二项堆</p>
+<p><strong>5.【9】可持久化数据结构</strong></p>
+<p><strong>2.3.3 算法 1. 算法策略</strong></p>
+<p>•【9】复杂分治思想•【9】平衡规划思想•【9】构造思想</p>
+<p><strong>2. 字符串算法</strong></p>
+<p>•【8】求最长回文串的Manacher算法•【8】多模匹配算法——AC自动机•【9】求字符串前缀和后缀算法——扩展KMP•【9】确定性有穷自动机——DFA算法•【10】非确定性有穷自动机——NFA算法•【10】后缀自动机</p>
+<p><strong>3. 图论算法</strong></p>
+<p>•【8】网络流算法•【10】图的支配集、独立集与覆盖集•【8】二分图的最大匹配——匈牙利算法</p>
+<p>•【9】二分图的最佳匹配算法——KM算法•【10】一般图的匹配</p>
+<p><strong>4. 动态规划</strong></p>
+<p>•【9】复杂动态规划模型构建•【9】复杂动态规划模型的优化</p>
+<p><strong>2.2.4 数学 1. 信息论基础</strong></p>
+<p>•【10】熵、互信息、条件熵、相对熵的基本概念•【10】信息复杂度的基本概念•【10】描述复杂度的基本概念•【10】通讯复杂度的基本概念</p>
+<p><strong>2. 初等数论</strong></p>
+<p>•【8】原根和指数•【8】大步小步（Baby Step Giant Step，BSGS）算法•【9】完全数•【9】狄利克雷（Dirichlet）卷积•【10】平方剩余•【10】二次同余式•【10】二次互反律</p>
+<p><strong>3. 离散数学</strong></p>
+<p>•【9】代数系统的基本概念•【9】群的基本概念•【9】置换群与循环群</p>
+<p><strong>4. 组合数学</strong></p>
+<p>•【9】母函数•【9】莫比乌斯变换•【9】Burnside引理与Pólya原理•【9】斯特林数</p>
+<p><strong>5. 高等数学</strong></p>
+<p>•【9】多项式函数微分•【9】多项式函数积分•【10】泰勒级数•【10】快速傅里叶变换（Fast Fourier Transform，FFT）•【10】卷积</p>
+<p><strong>6. 线性代数</strong></p>
+<p>•【9】矩阵的逆运算•【9】行列式及其运算•【9】线性相关与矩阵的逆</p>
+<p><strong>7. 概率论</strong></p>
+<p>•【8】概率相关概念•【9】求概率的乘法公式、全概率公式、贝叶斯公式</p>
+<p><strong>8. 博弈论</strong></p>
+<p>•【9】零和博弈问题——Nim博弈等•【9】Sprague-Garundy（SG）函数概念及应用</p>
+<p><strong>9. 运筹学</strong></p>
+<p>•【10】线性规划之单纯形法</p>
+<p><strong>10. 计算几何</strong></p>
+<p>•【7】矢量及其运算•【8】点、线、面之间的位置判断•【8】常见图形的面积计算•【8】二维凸包的求及其应用•【9】半平面交</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2021/07/24/hello-world/" rel="prev" title="Hello World">
+      <i class="fa fa-chevron-left"></i> Hello World
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2021/09/12/CSP-JS%20%20%E7%AC%AC%E4%B8%80%E8%BD%AE%E7%9F%A5%E8%AF%86%E7%82%B9%E6%80%BB%E7%BB%93/" rel="next" title="">
+       <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="wlzx"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">wlzx</p>
+  <div class="site-description" itemprop="description">上次编辑于7.23</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">3</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/xxiyan08" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;xxiyan08" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/muchi83717@163.com" title="E-Mail → muchi83717@163.com"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://space.bilibili.com/327780842" title="Bilibili → https:&#x2F;&#x2F;space.bilibili.com&#x2F;327780842" rel="noopener" target="_blank"><i class="fab fa-weibo fa-fw"></i>Bilibili</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://steamcommunity.com/profiles/76561199111694438/" title="Steam → https:&#x2F;&#x2F;steamcommunity.com&#x2F;profiles&#x2F;76561199111694438&#x2F;" rel="noopener" target="_blank"><i class="fab fa-google fa-fw"></i>Steam</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 2021-7 – 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">wlzx</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  
+  <script color='0,0,255' opacity='0.5' zIndex='-1' count='99' src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el         : '#valine-comments',
+      verify     : false,
+      notify     : true,
+      appId      : 'qWctDbCginAbVSlyjf7Y6Ydw-gzGzoHsz',
+      appKey     : 'Hau7IrcsH6bhaNAe5hynhXro',
+      placeholder: "欢迎留言",
+      avatar     : 'mm',
+      meta       : guest,
+      pageSize   : '10' || 10,
+      visitor    : true,
+      lang       : '' || 'zh-cn',
+      path       : location.pathname,
+      recordIP   : false,
+      serverURLs : ''
+    });
+  }, window.Valine);
+});
+</script>
+
+</body>
+</html>

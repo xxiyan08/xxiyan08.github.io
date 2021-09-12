@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css">
+  <script src="/lib/pace/pace.min.js"></script>
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="CSP-J&#x2F;S  第一轮知识点总结一.计算机基础知识：·计算机发展： 第一代 1946-1958 电子管 第二代 1959-1964 晶体管 第三代 1965-1970 集成电路 第四代 1971-至今 大规模，超大规模集成电路 ·ENIAC： 世界第一台电子计算机，诞生于美国宾夕法尼亚大学于1946年 ·冯·诺依曼理论： 1944年，美籍匈牙利数学家冯·诺依曼提出计算机基本结构和工作方式的设想，">
+<meta property="og:type" content="article">
+<meta property="og:title" content="wlzx的博客">
+<meta property="og:url" content="http://example.com/2021/09/12/CSP-JS%20%20%E7%AC%AC%E4%B8%80%E8%BD%AE%E7%9F%A5%E8%AF%86%E7%82%B9%E6%80%BB%E7%BB%93/index.html">
+<meta property="og:site_name" content="wlzx的博客">
+<meta property="og:description" content="CSP-J&#x2F;S  第一轮知识点总结一.计算机基础知识：·计算机发展： 第一代 1946-1958 电子管 第二代 1959-1964 晶体管 第三代 1965-1970 集成电路 第四代 1971-至今 大规模，超大规模集成电路 ·ENIAC： 世界第一台电子计算机，诞生于美国宾夕法尼亚大学于1946年 ·冯·诺依曼理论： 1944年，美籍匈牙利数学家冯·诺依曼提出计算机基本结构和工作方式的设想，">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://pic3.zhimg.com/80/v2-b950c480b2cb9810d1e6bab75ae1916a_720w.jpeg">
+<meta property="article:published_time" content="2021-09-12T10:44:38.439Z">
+<meta property="article:modified_time" content="2021-09-12T10:44:38.439Z">
+<meta property="article:author" content="wlzx">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://pic3.zhimg.com/80/v2-b950c480b2cb9810d1e6bab75ae1916a_720w.jpeg">
+
+<link rel="canonical" href="http://example.com/2021/09/12/CSP-JS%20%20%E7%AC%AC%E4%B8%80%E8%BD%AE%E7%9F%A5%E8%AF%86%E7%82%B9%E6%80%BB%E7%BB%93/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title> | wlzx的博客</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">wlzx的博客</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="archive fa-fw"></i>归档</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-resources">
+
+    <a href="/resources/" rel="section"><i class="download fa-fw"></i>资源</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/09/12/CSP-JS%20%20%E7%AC%AC%E4%B8%80%E8%BD%AE%E7%9F%A5%E8%AF%86%E7%82%B9%E6%80%BB%E7%BB%93/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="wlzx">
+      <meta itemprop="description" content="上次编辑于7.23">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="wlzx的博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+        </h1>
+
+        <div class="post-meta">
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-09-12 18:44:38" itemprop="dateCreated datePublished" datetime="2021-09-12T18:44:38+08:00">2021-09-12</time>
+            </span>
+
+          
+            <span id="/2021/09/12/CSP-JS%20%20%E7%AC%AC%E4%B8%80%E8%BD%AE%E7%9F%A5%E8%AF%86%E7%82%B9%E6%80%BB%E7%BB%93/" class="post-meta-item leancloud_visitors" data-flag-title="" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2021/09/12/CSP-JS%20%20%E7%AC%AC%E4%B8%80%E8%BD%AE%E7%9F%A5%E8%AF%86%E7%82%B9%E6%80%BB%E7%BB%93/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2021/09/12/CSP-JS%20%20%E7%AC%AC%E4%B8%80%E8%BD%AE%E7%9F%A5%E8%AF%86%E7%82%B9%E6%80%BB%E7%BB%93/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="CSP-J-S-第一轮知识点总结"><a href="#CSP-J-S-第一轮知识点总结" class="headerlink" title="CSP-J/S  第一轮知识点总结"></a>CSP-J/S  第一轮知识点总结</h1><h2 id="一-计算机基础知识："><a href="#一-计算机基础知识：" class="headerlink" title="一.计算机基础知识："></a>一.计算机基础知识：</h2><p>·<strong>计算机发展</strong>：</p>
+<p>第一代 1946-1958 电子管</p>
+<p>第二代 1959-1964 晶体管</p>
+<p>第三代 1965-1970 集成电路</p>
+<p>第四代 1971-至今 大规模，超大规模集成电路</p>
+<p>·<strong>ENIAC</strong>：</p>
+<p>世界第一台电子计算机，诞生于美国宾夕法尼亚大学于1946年</p>
+<p>·<strong>冯·诺依曼理论</strong>：</p>
+<p>1944年，美籍匈牙利数学家冯·诺依曼提出计算机基本结构和工作方式的设想，当今的计算机系统仍属于冯·诺依曼架构。</p>
+<p>·<strong>冯·诺依曼其理论要点</strong>：</p>
+<p>采用二进制形式表示数据和指令；</p>
+<p>采用存储程序方式；</p>
+<p>计算机由运算器，存储器，控制器，输入设备和输出设备五大部件组成。</p>
+<p>·<strong>计算机分类</strong>：巨型机，大型机，中型机，小型机，微型机，工作站。</p>
+<p>·<strong>计算机的应用</strong>：科学计算，信息处理，自动控制，计算机辅助技术，人工智能，网络应用</p>
+<p>·彩色显示器所显示的五彩斑斓的色彩，是由<strong>红色，蓝色，绿色</strong>混合而成的</p>
+<p>·<strong>图灵奖</strong>：由美国计算机协会（ACM）于19661年设立，名称取自英国科学家艾伦·麦席森·图灵，被誉为“计算机界的诺贝尔奖”。</p>
+<p>·IT的含义是<strong>信息技术</strong>。</p>
+<p>·计算机系统由<strong>硬件系统和软件系统</strong>组成。其中硬件系统由硬件系统和软件系统组成，软件系统由系统软件和应用软件组成。</p>
+<p>·中央处理器（CPU）由<strong>运算器，控制器和一些寄存器</strong>组成。运算器进行各种算术运算和逻辑运算，控制器是计算器的指挥系统。CPU的主要性能指标是<strong>主频和字长</strong>。</p>
+<p>·存储器：</p>
+<p>存储器可分为<strong>主存储器和辅助存储器</strong>两种。</p>
+<p>主存储器（内存储器）：属于主机的一部分，属于<strong>临时存储器</strong>。内存中含有很多存储单元，每个单元可以存放<strong>1个8位的二进制数</strong>，即一个字节。内存中每一个字节各有一个固定的编号，这个编号称为<strong>地址</strong>。存储器容量指存储器中所包含的字节数，通常用<strong>KB，MB,GB,TB,PB</strong>作为存储器容量单位。它们之间的进率是1024，从小到大可以简记为KMGTP。</p>
+<p>内存储器通常可以分为<strong>RAM</strong>(随机存储器），<strong>ROM</strong>（只读存储器），<strong>Cache</strong>（高速缓存存储器）</p>
+<p>辅助存储器（外存储器）：属于外部设备，属于<strong>永久存储器</strong>。常见的外存通常有<strong>软盘，硬盘，优盘，光盘</strong>四种。</p>
+<p>·断电后<strong>RAM中的信息会全部丢失</strong>，而ROM中的信息不会丢失。</p>
+<p>·<strong>输入设备</strong>：光电笔，数字化仪，图像扫描仪，触摸屏，麦克风，视屏输入设备，磁盘，磁带。</p>
+<p>·<strong>输出设备</strong>：显示器，打印机，绘图仪，磁盘，磁带，触摸屏</p>
+<p>·<strong>总线结构</strong>：总线可以按照传输信息的不同分为三种：数据总线，地址总线，控制总线。数据总线数双向的。地址总线是单向的，地址总线的宽度可以决定访问的存储器容量大小，如20条地址总线可以控制1MB的存储空间。控制总线则用来传送控制信号。</p>
+<p>·<strong>计算机主要指标</strong>：字长，运算速度（单位：MIPS），主频，内存容量</p>
+<p>·<strong>CPU访问存储器的速度</strong>：Cache&gt;内存&gt;外存</p>
+<p>·<strong>桌面操作系统</strong>主要有类Unix操作系统和Windows操作系统，<strong>服务器操作系统</strong>主要有Unix系列，Linux系列，Windows系列。遇到这类题目主要靠日常积累。</p>
+<p>·<strong>机器语言</strong>：计算机可以直接识别，速度快，用二进制代码编写，一般很难掌握，属于低级语言</p>
+<p>·<strong>汇编语言</strong>：用一些符号代替机器指令，源程序不能被计算机直接识别，可移植性差，属于低级语言</p>
+<p>·<strong>高级语言</strong>：计算机不能直接识别，通过编译或解释使计算机识别</p>
+<p>编译方式：将整个程序都转换成二进制代码，生成目标程序，然后把目标程序连接成可执行程序，编译性语言有C/C++,Pascal/Object Pascal</p>
+<p>解释方式：解释程序边1扫描边解释，对源程序解释一条执行一条，不产生目标程序，解释性语言有ASP,PHP,Java，JS，Python</p>
+<p>·C++是<strong>面向对象</strong>语言，C是<strong>面向过程</strong>语言</p>
+<p>·<strong>各种简写</strong>：</p>
+<p>局域网（LAN）,城域网（MAN），广域网（WAN）；</p>
+<p>美国国家信息交换标准代码（ASCLL编码）；</p>
+<p>传输控制协议（TCP）,网际协议（IP）；</p>
+<p>Telnet（远程登录协议）；</p>
+<p>文本传输协议（FTP），超文本标记语言（HTML）；</p>
+<p>超文本传输协议（HTTP）；</p>
+<p>统一资源定位器（URL）；</p>
+<p>电子邮件（E-mail，格式：收信人邮箱名@邮箱所在主机的域名），简单邮件传输协议（SMTP）,电子邮件扩展协议（MIME），邮局协议第三版（POP3）</p>
+<p>·<strong>域名</strong>：</p>
+<p>国家顶级域名：cn（中国），us（美国），uk（英国）</p>
+<p>国际顶级域名：int</p>
+<p>通用顶级域名：com（商业组织），mil（军事部门），org（非营利性组织），edu（教育机构），net（网络组织）</p>
+<p>·<strong>TCP/IP协议</strong>共有4层协议</p>
+<p>·<strong>IPv4</strong>是标识因特网上节点的32位地址，<strong>IPv6</strong>是128位的，分8组，每组16位。IP地址的主机号的每个域的取值范围是0~255,但主机ID所有域都不能为0或255.IP采用<strong>点分十进制记法</strong>，即将32bit的IP地址中的每8位用等效的十进制标识，并每8位之间加上一个点。栗子：133.128.89.32 , 102.65.0.1</p>
+<h2 id="二-初赛数学"><a href="#二-初赛数学" class="headerlink" title="二.初赛数学:"></a>二.初赛数学:</h2><p>·<strong>进制转换</strong>：</p>
+<p>二进制：</p>
+<p>二进制是计算机内部运算中采用的进制，在这样的进制系统下，只有0 1两个数字，计算机内部的所有运算都是在二进制的基础上进行的。</p>
+<p>八进制：</p>
+<p>八进制下，有0 1 2 3 4 5 6 7八个数字</p>
+<p>十六进制：</p>
+<p>十六进制下，有0 1 2 3 4 5 6 7 8 9 A B C D E F十六个数字</p>
+<p>十进制转二进制/八进制/十六进制：</p>
+<p>整数部分，把十进制数不断执行除 2 操作，直至商数为 0。读余数从下读到上，即是二进制的整数部分数字。小数部分，则用其乘 2，取其整数部分的结果，再用计算后的小数部分依此重复计算，算到小数部分全为 0 为止，之后从上到下，读所有计算后整数部分的数字，即为二进制的小数部分数字。</p>
+<p>例如：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">将33.25转化为二进制数</span><br><span class="line">整数部分：</span><br><span class="line">33/2=16 ......1</span><br><span class="line">16/2=8  ......0</span><br><span class="line">8/2=4   ......0</span><br><span class="line">4/2=2   ......0</span><br><span class="line">2/2=1   ......0</span><br><span class="line">1/2=0   ......1</span><br><span class="line">小数部分：</span><br><span class="line">0.25*2=0.5  0</span><br><span class="line">0.5*2=1     1</span><br></pre></td></tr></table></figure>
+
+<p>二进制/八进制/十六进制转十进制：</p>
+<p>假设我们要将n进制转换为十进制，首先我们从n进制的右边为第一位数（从低位到高位），其权值是n的0次方，第二位是n的1次方，依次递增下去，把最后的结果相加的值就是十进制的值了。</p>
+<p>例如：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">将11010.01(2)转换为十进制数</span><br><span class="line">11010.01(2)=1*2^4+1*2^3+0*2^2+1*2^1+0*2^0+0*2^(-1)+1*2(-2)</span><br><span class="line">        =26.25</span><br></pre></td></tr></table></figure>
+
+<p>二进制/八进制/十六进制的互相转化：</p>
+<p>一个八进制位可以用3个二进制位表示（2的立方为8），一个十六进制位可以用 4 个二进制位来表示（2的四次方为16），以此类推</p>
+<p>·<strong>原码，反码，补码</strong>：</p>
+<p>机器数：</p>
+<p>一个数在计算机中的二进制表示形式, 叫做这个数的机器数。机器数是带符号的，在计算机用一个数的最高位存放符号, 正数为0, 负数为1。</p>
+<p>真值：</p>
+<p>因为第一位是符号位，所以机器数的形式值就不等于真正的数值。例如有符号数 1000 0011，其最高位1代表负，其真正数值是 -3 而不是形式值131（1000 0011转换成十进制等于131）。所以将带符号位的机器数对应的真正数值称为机器数的真值。</p>
+<p>原码：</p>
+<p>原码就是符号位加上真值的绝对值, 即用第一位表示符号, 其余位表示值。</p>
+<p>如果是8位二进制:</p>
+<p>[+2]原 = 0000 0010</p>
+<p>[-2]原 = 1000 0010</p>
+<p>[1]原 = 0000 0001</p>
+<p>[-1]原 = 1000 0001</p>
+<p>反码：</p>
+<p>反码的表示方法是:</p>
+<p>正数的反码是其本身</p>
+<p>负数的反码是在其原码的基础上, 符号位不变，其余各个位取反.</p>
+<p>[+1] = [0000 0001]原 = [0000 0001]反</p>
+<p>[-1] = [1000 0001]原 = [1111 1110]反</p>
+<p>补码：</p>
+<p>补码的表示方法是:</p>
+<p>正数的补码就是其本身</p>
+<p>负数的补码是在其原码的基础上, 符号位不变, 其余各位取反, 最后+1. (即在反码的基础上+1)</p>
+<p>[+1] = [0000 0001]原 = [0000 0001]反 = [0000 0001]补</p>
+<p>[-1] = [1000 0001]原 = [1111 1110]反 = [1111 1111]补</p>
+<p>·<strong>逻辑运算</strong>：</p>
+<p>&amp;&amp; 即∧（逻辑与）：两边都为真时则为真，否则为假</p>
+<p>|| 即∨（逻辑或）：至少有一个为真时为真，否则为假</p>
+<p>！ 即￢（逻辑非）：假时为真，真时为假</p>
+<p>·<strong>位运算</strong>：</p>
+<p>位运算就是基于整数的二进制表示进行的运算。由于计算机内部就是以二进制来存储数据，位运算是相当快的。</p>
+<p>常用的运算符共 6 种，分别为与（ &amp; ）、或（ | ）、异或（ ^ ）、取反（ ~ ）、左移（ &lt;&lt; ）和右移（ &gt;&gt; ）。</p>
+<p>按位与（&amp;）：</p>
+<p>参加运算的两个数，换算为二进制后，进行与运算。只有当 相应位上全部为1时取1， 存在0时为0。</p>
+<p>按位或（|）：</p>
+<p>参加运算的两个数，换算为二进制后，进行或运算。只要当 相应位上存在1时取1， 全部为0时为0。</p>
+<p>按位同或（⊙）：</p>
+<p>参加运算的两个数，换算为二进制后，进行异或运算。只有当 相应位上的数字相同时取1， 不相同为0。</p>
+<p>按位异或（^）：</p>
+<p>参加运算的两个数，换算为二进制后，进行异或运算。只有当 相应位上的数字不相同时取1， 相同为0。</p>
+<p>按位取反（～）：</p>
+<p>参加运算的两个数，换算为二进制后， 0变1， 1变0。</p>
+<p>·<strong>集合运算</strong>：</p>
+<p>假设有全集{1,2,3,4,5,8}，集合A{1,2,3,4}，集合B{1,2,3,8}</p>
+<p>并运算（∪）：A∪B就是集合A和集合B中所有的元素组成一个新集合。A∪B={1,2,3,4,8}</p>
+<p>交运算（∩）：A∩B就是同时在集合A和集合B中的元素组成一个新集合。A∩B={1,2,3}</p>
+<p>差运算（-）：A-B就是集合A删去A∩B中的元素后组成的一个新集合。A-B={4}</p>
+<p>·<strong>最大公约数与最小公倍数</strong>：</p>
+<p>最大公因数，也称最大公约数、最大公 因子，指两个或多个 整数共有 约数中最大的一个。 a， b的最大公约数记为（a，b），同样的，a，b，c的最大 公约数记为（a，b，c），多个 整数的最大公约数也有同样的记号。求最大公约数有多种 方法，常见的有 质因数分解法、 短除法、 辗转相除法、 更相减损法。与最大公约数相对应的概念是 最小公倍数，a，b的 最小公倍数记为[a，b]。</p>
+<p>两个或多个整数公有的倍数叫做它们的公倍数，其中除0以外最小的一个公倍数就叫做这几个整数的最小公倍数。整数a，b的最小公倍数记为[a，b]，同样的，a，b，c的最小公倍数记为[a，b，c]，多个整数的最小公倍数也有同样的记号。 与最小公倍数相对应的概念是最大公约数，a，b的最大公约数记为（a，b）。关于最小公倍数与最大公约数，我们有这样的定理：(a,b)[a,b]=ab(a,b均为整数)。</p>
+<p>·<strong>质数与合数</strong>：</p>
+<p>一个大于1的自然数如果只有1和它本身两个因数，这样的数叫做质数。质数只能被1和它本身整除，质数有无限多个，最小的质数是2。</p>
+<p>一个自然数如果除了1和它本身还有别的因数，这样的数叫做合数。合数除了1和它本身，还可以被其他数整除。合数也有无限多个。</p>
+<p>注意：2是唯一的偶质数，1既不是质数也不是合数。</p>
+<p>任何一个合数都能够写成若干个质数相乘的形式，这些质数称为这个数的质因数，这个过程称为分解质因数。</p>
+<p>在进行分解质因数的过程中要熟记100以内的25个质数，从小到大依次是2、3、5、7、11、13、17、19、23、29、31、37、41、43、47、53、59、61、67、71、73、79、83、89、97</p>
+<h2 id="三-基本算法与数据结构："><a href="#三-基本算法与数据结构：" class="headerlink" title="三.基本算法与数据结构："></a>三.基本算法与数据结构：</h2><p>·<strong>算法</strong>：</p>
+<p>算法是对特定问题求解步骤的一种描述，它是指令（规则）的有限序列，其中每一条指令表示一个或多个操作。</p>
+<p>一个算法必须满足一下五个重要特征：</p>
+<p>1.有穷性：对于任意一组合法的输入值，算法的每个操作步骤都能在有限的时间内完成。如果一个算法执行耗费的时间太长，即使求出了结果，也是没有意义的</p>
+<p>2.确定性：算法中的每一步都必须有明确的定义。</p>
+<p>3.输入：一个算法应该有0个或多个输入。</p>
+<p>4.输出：一个算法应该有1个或多个输出。</p>
+<p>5.可行性：一个算法应该遵循当前条件下特定的解题规则，每一个操作都应该是解题规则中允许使用的，可执行的。</p>
+<p>·<strong>算法的时间复杂度</strong>：</p>
+<p>时间复杂度越大，程序跑的时间就越长。</p>
+<p>在初赛中，通常会用大O记号来表示程序的复杂程度。大O记号表达的复杂度，是“最坏情况下，程序执行操作的总次数”。</p>
+<p>算法的时间复杂度只考虑数量级。如果是多个项相加，只取最大的项并且省略掉所有的常数。例： 3n − 10 是 O(n) 的，233 是 O(1) 的。</p>
+<p><strong>主定理</strong>:</p>
+<p>由于递归式复杂度的难以确定，所以目前常用的方法有这么几种：代换猜测法、递归树法、主定理、直接数学分析法</p>
+<p>代换猜测法通常和递归树法合用，利用递归树法得到一个大概正确的结果，然后利用数学归纳法对其验证。</p>
+<p>直接的数学分析法相对很直接，很强大，但是对数学要求很高，尤其是碰到一些BT的表达式</p>
+<p>所以最常用，也是最常考的还是主定理。</p>
+<p>主定理一共有三种情况，分情况使用。具体如下图</p>
+<p><img src="https://pic3.zhimg.com/80/v2-b950c480b2cb9810d1e6bab75ae1916a_720w.jpeg" alt="img"></p>
+<p>（一定要背熟了哦！！！）</p>
+<p>·<strong>算法的空间复杂度</strong>：</p>
+<p>空间复杂度是对一个算法在运行过程中临时占用存储空间大小的一个量度。</p>
+<p>初赛一般不考察空间复杂度，但还是要稍作了解。</p>
+<p>·<strong>算法的基本结构</strong>：三种，顺序结构，选择结果和循环结构。</p>
+<p>·<strong>栈</strong>：</p>
+<p>栈是仅限定在表尾进行插入或删除操作的线性表，因此，表尾端称为栈顶，表头端称为栈底，不含元素的空表称为空栈。</p>
+<p>栈有两种两种储存方法：顺序栈和链式栈</p>
+<p>栈的特点：后进先出</p>
+<p>·<strong>队列</strong>：</p>
+<p>队列是用来存储暂未处理但需要按一定顺序处理的元素的一种数据结构，是一种先进先出的线性表。</p>
+<p>队列只允许在表的一端进行插入，另一端删除元素，和日常生活中的排队购物类似。</p>
+<p>·<strong>链表</strong>：</p>
+<p>链表不要求逻辑上相邻的元素在物理位置上也相邻。链表的特点是用一组任意的存储单元存储线性表的数据元素，这一组存储单元不要求是连续的。</p>
+<p>单向链表仅指向后继元素，双向链表不仅指向后继，也指向前驱。循环链表表中最后一个结点的指针指向头结点，整个链表构成一个环。由此，从循环链表中的任一结点出发均可以找到表中其他结点。</p>
+<h2 id="四-NOI系列比赛常识："><a href="#四-NOI系列比赛常识：" class="headerlink" title="四.NOI系列比赛常识："></a>四.NOI系列比赛常识：</h2><p>·<strong>NOI系列活动宗旨</strong>：旨在向那些在中学阶段学习的青少年普及计算机科学知识；给学校的信息技术教育课程提供动力和新的思路；给那些有才华的学生提供相互交流和学习的机会；通过竞赛和相关的活动培养和选拔优秀计算机人才。</p>
+<p>·<strong>NOI系列活动诞生背景</strong>：1984年邓小平指出：“计算机的普及要从娃娃做起。”中国计算机学会于1984年创办全国青少年计算机程序设计竞赛，当年参加竞赛的有8000多人。这一新的活动形式受到党和政府的关怀，得到社会各界的关注与支持。中央领导王震同志出席了首届竞赛颁奖大会，并对此项活动给予了充分肯定。</p>
+<p>·<strong>NOI</strong>：全国青少年信息学奥林匹克（NOI）是国内包括港澳在内的省级代表队最高水平的大赛，自1984年至今，在国内包括香港、澳门组织竞赛活动。每年经各省选拔产生5名选手（其中一名是女选手），由中国计算机学会在计算机普及较好的城市组织进行比赛。这一竞赛记个人成绩，同时记团体总分。</p>
+<p>NOI期间，举办同步夏令营和NOI网上同步赛，给那些程序设计爱好者和高手提供机会。为增加竞赛的竞争性、对抗性和趣味性以及可视化，NOI组织进行团体对抗赛，团体对抗赛实质上是程序对抗赛，其成绩纳入总分计算。</p>
+<p>·<strong>NOIP</strong>：全国青少年信息学奥林匹克联赛(NOIP)自1995年至今。每年由中国计算机学会统一组织。 NOIP在同一时间、不同地点以各省市为单位由特派员组织。全国统一大纲、统一试卷。初、高中或其他中等专业学校的学生可报名参加联赛。联赛分初赛和复赛两个阶段。初赛考察通用和实用的计算机科学知识，以笔试为主。复赛为程序设计，须在计算机上调试完成。参加初赛者须达到一定分数线后才有资格参加复赛。联赛分普及组和提高组两个组别，难度不同，分别面向初中和高中阶段的学生。</p>
+<p>·<strong>WC</strong>：WC(全国青少年信息学奥林匹克冬令营,简称冬令营)自1995年起。每年在寒假期间开展为期一周的培训活动。冬令营共8天，包括授课、 讲座、讨论、测试等。参加冬令营的营员分正式营员和非正式营员。获得NOI前20名的选手和指导教师为正式营员，非正式营员限量自愿报名参加。在冬令营授课的是著名大学的资深教授及已获得国际金牌学生的指导教师。</p>
+<p>·<strong>APIO</strong>: 亚洲与太平洋地区信息学奥赛（APIO）2007年创建，该竞赛为区域性的网上准同步赛，是亚洲和太平洋地区每年一次的国际性赛事，旨在给青少年提供更多的赛 事机会，推动亚太地区的信息学奥林匹克的发展。APIO每年5月举行，由不同的国家轮流主办。每个参赛团参赛选手上限为100名，其中成绩排在前6名的选 手作为代表该参赛团的正式选手统计成绩。APIO中国赛区由中国计算机学会组织参赛，获奖比例将参照IOI。</p>
+<p>·<strong>选拔赛</strong>：选拔参加国际信息学奥林匹克中国代表队的竞赛（选拔赛）。IOI的选手是从获NOI前20名选手中选拔出来的，获得前4名的优胜者代表中国参 加国际竞赛。选拔科目包括：NOI成绩、冬令营成绩、论文和答辩、平时作业、选拔赛成绩、口试。上述项目加权产生最后成绩。</p>
+<p>·<strong>IOI</strong>：国际信息学奥林匹克竞赛（IOI）。由中国计算机学会组织代表队，代表中国参加国际每年一次的IOI。中国是IOI创始国之一。IOI2000由中国主办，CCF承办。出国参赛得到中国科协和国家自然科学基金委的资助。自1989年开始，我 国在NOI（网上同步赛99年开始）、NOIP、冬令营、选拔赛的基础上，组织参加国际信息学奥林匹克（IOI）竞赛。十几年中选拔75人次参加了 IOI，累计获金牌46块、银牌17块，铜牌12块。</p>
+<p>·<strong>CSP-J/S</strong>：CCF非专业级软件能力认证(CSP-J/S)创办于2019年，是由CCF统一组织的评价计算机非专业人士算法和编程能力的活动。在同一时间、不同地点以各省市为单位由CCF授权的省认证组织单位和总负责人组织。全国统一大纲、统一认证题目，任何人均可报名参加。CSP-J/S分两个级别进行，分别为CSP-J（入门级，Junior）和CSP-S（提高级，Senior），两个级别难度不同，均涉及算法和编程。CSP-J/S分第一轮和第二轮两个阶段。第一轮考察通用和实用的计算机科学知识，以笔试为主，部分省市以机试方式认证。第二轮为程序设计，须在计算机上调试完成。第一轮认证成绩优异者进入第二轮认证，第二轮认证结束后，CCF将根据CSP-J/S各组的认证成绩和给定的分数线，颁发认证证书。CSP-J/S成绩优异者，可参加NOI省级选拔，省级选拔成绩优异者可参加NOI。</p>
+<p>·<strong>NOI竞赛委员会</strong>：</p>
+<p>为有效组织NOI系列活动，CCF设立NOI竞赛委员会。竞赛委员会是主办单位行使组织、领导NOI活动的职能机构，其主要职责是：</p>
+<p>•负责NOI系列活动的组织工作。</p>
+<p>•制定或修改NOI条例和相关规则。</p>
+<p>•考察和选定NOI承办单位。</p>
+<p>•监督信息学奥林匹克联赛（NOIP）竞赛过程。</p>
+<p>•根据竞赛条例和事实对NOI活动组织过程中的相关人员进行奖励或惩罚。</p>
+<p>•受理符合NOI条例的投诉，对有争议的事项进行仲裁。</p>
+<p>主席是杜子德，即中国计算机学会秘书长。</p>
+<p>·<strong>技术规则</strong>：详见<a href="https://link.zhihu.com/?target=http://www.noi.cn/articles.html?type=11">NOI系列比赛技术规则</a></p>
+<p>·<strong>IOI2020</strong>：第32届国际信息学奥林匹克竞赛（IOI2020）于9月13日至9月23日在主办国新加坡以及世界各国同步举行，共有来自87个国家（地区）的343名选手参赛。</p>
+<p>本届IOI因新冠疫情的影响，首次采用了全部线上比赛的形式，赛制仍为两试6道题目（满分为600）。中国队四位选手经过努力拼搏，在第一试全体获得满分后，在第二试继续稳定发挥，最终均获得金牌，且名列全场前七位。中国队也以显著的优势取得了团体第一。</p>
+<p>·<strong>NOI2020</strong>: 由CCF主办，长沙市第一中学承办的第37届全国青少年信息学奥林匹克竞赛（CCF NOI2020）于2020年8月16日-21日在长沙市一中雨花新华都学校顺利举行。</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2021/07/26/NOI%E5%A4%A7%E7%BA%B2/" rel="prev" title="NOI大纲">
+      <i class="fa fa-chevron-left"></i> NOI大纲
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#CSP-J-S-%E7%AC%AC%E4%B8%80%E8%BD%AE%E7%9F%A5%E8%AF%86%E7%82%B9%E6%80%BB%E7%BB%93"><span class="nav-number">1.</span> <span class="nav-text">CSP-J&#x2F;S  第一轮知识点总结</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80-%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%EF%BC%9A"><span class="nav-number">1.1.</span> <span class="nav-text">一.计算机基础知识：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8C-%E5%88%9D%E8%B5%9B%E6%95%B0%E5%AD%A6"><span class="nav-number">1.2.</span> <span class="nav-text">二.初赛数学:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%89-%E5%9F%BA%E6%9C%AC%E7%AE%97%E6%B3%95%E4%B8%8E%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%EF%BC%9A"><span class="nav-number">1.3.</span> <span class="nav-text">三.基本算法与数据结构：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%9B-NOI%E7%B3%BB%E5%88%97%E6%AF%94%E8%B5%9B%E5%B8%B8%E8%AF%86%EF%BC%9A"><span class="nav-number">1.4.</span> <span class="nav-text">四.NOI系列比赛常识：</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="wlzx"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">wlzx</p>
+  <div class="site-description" itemprop="description">上次编辑于7.23</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">3</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/xxiyan08" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;xxiyan08" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/muchi83717@163.com" title="E-Mail → muchi83717@163.com"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://space.bilibili.com/327780842" title="Bilibili → https:&#x2F;&#x2F;space.bilibili.com&#x2F;327780842" rel="noopener" target="_blank"><i class="fab fa-weibo fa-fw"></i>Bilibili</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://steamcommunity.com/profiles/76561199111694438/" title="Steam → https:&#x2F;&#x2F;steamcommunity.com&#x2F;profiles&#x2F;76561199111694438&#x2F;" rel="noopener" target="_blank"><i class="fab fa-google fa-fw"></i>Steam</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 2021-7 – 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">wlzx</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  
+  <script color='0,0,255' opacity='0.5' zIndex='-1' count='99' src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el         : '#valine-comments',
+      verify     : false,
+      notify     : true,
+      appId      : 'qWctDbCginAbVSlyjf7Y6Ydw-gzGzoHsz',
+      appKey     : 'Hau7IrcsH6bhaNAe5hynhXro',
+      placeholder: "欢迎留言",
+      avatar     : 'mm',
+      meta       : guest,
+      pageSize   : '10' || 10,
+      visitor    : true,
+      lang       : '' || 'zh-cn',
+      path       : location.pathname,
+      recordIP   : false,
+      serverURLs : ''
+    });
+  }, window.Valine);
+});
+</script>
+
+</body>
+</html>
